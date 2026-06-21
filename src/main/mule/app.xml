@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:http="http://www.mulesoft.org/schema/mule/http"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+  <flow name="get-products-flow">
+    <http:listener config-ref="HTTP_Listener_Config" path="/products" method="GET"/>
+    <logger level="DEBUG" message="Product search: #[attributes.queryParams]"/>
+    <error-handler ref="Global_Error_Handler"/>
+  </flow>
+
+  <flow name="get-product-by-id-flow">
+    <http:listener config-ref="HTTP_Listener_Config" path="/products/{id}" method="GET"/>
+    <logger level="DEBUG" message="Fetching product: #[attributes.uriParams.id] full payload: #[payload]"/>
+    <error-handler ref="Global_Error_Handler"/>
+  </flow>
+
+</mule>

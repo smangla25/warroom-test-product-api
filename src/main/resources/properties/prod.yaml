@@ -1,0 +1,15 @@
+# WARROOM-TEST S2 product-api: TWO ISSUES PLANTED
+# 1. mule.env=sandbox (WRONG - should be 'prod')
+# 2. Low replica count noted: deploy target is 1 replica (below minimum 2 for HA)
+http:
+  port: "8081"
+mule:
+  env: "sandbox"
+api:
+  autodiscovery:
+    id: "18542450"
+  client_id: "prod-product-client-id"
+products:
+  catalog:
+    host: "catalog-service.prod.company.com"
+    port: "443"

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="60">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%-5p %d [%t] %c: %m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <!-- WARROOM-TEST S2: DEBUG level - Phase 4 BLOCK -->
+    <AsyncRoot level="DEBUG">
+      <AppenderRef ref="Console"/>
+    </AsyncRoot>
+    <AsyncLogger name="com.mulesoft" level="DEBUG"/>
+  </Loggers>
+</Configuration>

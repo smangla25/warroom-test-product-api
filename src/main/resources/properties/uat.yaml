@@ -1,0 +1,12 @@
+http:
+  port: "8081"
+mule:
+  env: "uat"
+api:
+  autodiscovery:
+    id: "18542250"
+  client_id: "uat-product-client-id"
+products:
+  catalog:
+    host: "catalog-service.uat.company.com"
+    port: "443"
